@@ -4,12 +4,6 @@ import uuid
 import pandas as pd
 
 from starwars.repository.postgres_objects import Base, Starship as pgStarship
-"""
-sudo -u postgres psql
-postgres=# create database starwarsdb;
-postgres=# create user starwars with encrypted password 'starwars';
-postgres=# grant all privileges on database starwarsdb to starwars;
-"""
 
 setup = {
     'dbname': "starwarsdb",

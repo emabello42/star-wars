@@ -19,6 +19,7 @@ class PostgresRepo:
         starships = []
         for q in results:
             starships.append(domain.Starship(code=q.code, name=q.name, hyperdrive_rating=q.hyperdrive_rating))
+        return starships
 
     def list_starships(self, params=None):
         DBSession = sessionmaker(bind=self.engine)

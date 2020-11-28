@@ -27,7 +27,7 @@ class ValidRequestObject:
 
 
 class StarshipRequestObject(ValidRequestObject):
-    accepted_params = set({'order_by'})
+    accepted_params = set({'orderby_hyperdrive_desc', 'orderby_hyperdrive_asc'})
 
     def __init__(self, params=None):
         self.params = params

@@ -5,9 +5,9 @@ class ResponseFailure:
 
     def __init__(self, type_, message):
         self.type = type_
-        self.message = self._format_message(message)
+        self.message = self.__format_message(message)
 
-    def _format_message(self, msg):
+    def __format_message(self, msg):
         if isinstance(msg, Exception):
             return "{}: {}".format(msg.__class__.__name__, "{}".format(msg))
         return msg

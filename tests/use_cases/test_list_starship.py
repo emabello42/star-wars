@@ -1,6 +1,6 @@
 import pytest
 from starwars.domain.starship import Starship
-from starwars.use_cases.list_starship import ListStarshipUseCase
+from starwars.use_cases.list_starships import ListStarshipUseCase
 from starwars.request_objects import StarshipRequestObject
 import uuid
 from unittest import mock
@@ -21,5 +21,5 @@ def test_list_starship_orderby_hyperdrive(domain_starships):
     request = StarshipRequestObject()
     response = starship_list_use_case.execute(request)
     assert bool(response) is True
-    repo.list_starships.assert_called()
+    repo.list_starships.assert_called_with(params={'orderby_hyperdrive_desc'})  # test defaults
     assert response.value == domain_starships
