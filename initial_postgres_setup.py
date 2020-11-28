@@ -29,6 +29,8 @@ Base.metadata.create_all(engine)
 
 # create initial data
 df = pd.read_csv("starships.csv")
+df = df.dropna(subset=['hyperdrive_rating'])
+df = df.drop_duplicates(subset=['name'])
 DBSession = sqlalchemy.orm.sessionmaker(bind=engine)
 session = DBSession()
 
