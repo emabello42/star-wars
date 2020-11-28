@@ -12,6 +12,4 @@
 `pipenv install`
 
 ### Run tests:
-`cd star-wars`
-
 `pytest`
