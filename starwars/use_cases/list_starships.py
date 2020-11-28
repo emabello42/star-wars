@@ -1,5 +1,4 @@
 import starwars.response_objects as res
-import logging
 
 class ListStarshipUseCase:
     def __init__(self, repo):
@@ -12,7 +11,6 @@ class ListStarshipUseCase:
 
         try:
             params = req_obj.params if req_obj.params else self.default_params
-            logging.debug(str(params))
             starships = self.repo.list_starships(params=params)
             return res.ResponseSuccess(starships)
         except Exception as exc:

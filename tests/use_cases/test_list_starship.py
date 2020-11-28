@@ -21,5 +21,5 @@ def test_list_starship_orderby_hyperdrive(domain_starships):
     request = StarshipRequestObject()
     response = starship_list_use_case.execute(request)
     assert bool(response) is True
-    repo.list_starships.assert_called_with(params={'orderby_hyperdrive_desc'})  # test defaults
+    repo.list_starships.assert_called_with(params={'orderby_hyperdrive_asc'})  # test defaults
     assert response.value == domain_starships
